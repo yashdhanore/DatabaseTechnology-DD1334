@@ -1,0 +1,32 @@
+1) 
+select * from Country WHERE Population < 1000;
+
+2) 
+select Name as CountryName, Area, Population from Country where population < 1000;
+
+3)
+select Name, Area, Population from Country where population < 2000 AND population > 1000 AND Area > 1;
+
+4)
+select Code from Country where Name = "Norway";
+
+5)
+select City.Name from City join Country on City.Country = Country.Code where Country.Name = "Sweden" AND City.Population > 500000;
+
+6)
+select Name, Population, Elevation from City where Elevation < 0;
+
+7)
+select SUM(Population) as Total, AVG(Population) as Average, MIN(Population) as Minimum, MAX(Population) as Maximum from City where Elevation < 0;
+
+8)
+ select Name from City where (Name LIKE 'Los%' OR Name LIKE '%holm') AND (Name NOT LIKE '%is');
+
+9)
+select Name, Population from Country ORDER BY Population DESC limit 5;
+
+10)
+select Country.Name, City.Name ,Elevation from City join Country on City.Country = Country.Code where Elevation IS NOT NULL ORDER BY Elevation limit 5;
+
+11)
+select Country.Name from Country where Country.Name LIKE "Y%" UNION select City.Name from City where City.Name LIKE "%x";

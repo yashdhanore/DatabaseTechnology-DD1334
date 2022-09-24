@@ -1,0 +1,27 @@
+1.a)
+CREATE VIEW PopData AS 
+SELECT 
+CityPops.year,
+CityPops.City AS Name,
+CityPops.Population,
+CityPops.Country,
+City.Longitude,
+City.Latitude ,
+City.Elevation,
+Economy.Agriculture,
+Economy.Service,
+Economy.Industry ,
+Economy.Inflation
+FROM Citypops,City,Economy
+WHERE Citypops.City = City.Name AND Citypops.Country = City.Country AND City.Country = Economy.Country;
+
+1.b) 
+View is a virtual table and View is computed each time it is used or accessed. If any content in the table is updated,
+it is reflected in the View and it does not require any storage space and is slow. 
+Whereas a Materialized View is a physical copy of the query expression. It is stored on the disk and not updated 
+each time it is used and thats why it is fast. In our case, we dont run the query several times and compared to big database this is
+a small one, so there is no need to use Materialized view.  
+
+2.b) This reasoning is not correct as we might have informantion about a few cities in particular years only, and we might not 
+have their information during some years. So we dont have consistent data to say that people are moving from cities to countryside.
+
