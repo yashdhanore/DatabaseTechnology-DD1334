@@ -25,3 +25,5 @@ a small one, so there is no need to use Materialized view.
 2.b) This reasoning is not correct as we might have informantion about a few cities in particular years only, and we might not 
 have their information during some years. So we dont have consistent data to say that people are moving from cities to countryside.
 
+2.g) Hypothesis: Countries which lie between tropic of cancer and tropic of capricon have a high population growth.
+
